@@ -19,8 +19,8 @@ const Product = ({name, title, basePrice, colors, sizes, }) => {
     }
     const found = sizes.find(element => element.name === currentSize);
     {console.log(currentSize)}
-    {console.log(found)}
     {console.log(found.additionalPrice)}
+    {console.log(found)}
     {console.log(currentColor)}
     {console.log(getPrice())}
     
@@ -36,7 +36,7 @@ const Product = ({name, title, basePrice, colors, sizes, }) => {
       <div>
         <header>
           <h2 className={styles.name}>{title}</h2>
-          <span className={styles.price}>{basePrice}$</span>
+          <span className={styles.price}>{getPrice()}$</span>
         </header>
         <form>
           <div className={styles.sizes}>
@@ -44,7 +44,7 @@ const Product = ({name, title, basePrice, colors, sizes, }) => {
             <ul className={styles.choices}>
               {sizes.map(size =>
               <li key={size.id}>
-              <button type="button" className={size === currentSize && styles.active} onClick={() => setCurrentSize(size)}>{size.name}</button>
+              <button type="button" className={size === currentSize && styles.active} onClick={() => setCurrentSize(size.name)}>{size.name}</button>
               </li>)}
             </ul>
           </div>
