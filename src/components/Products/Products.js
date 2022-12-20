@@ -5,13 +5,10 @@ import Product from '../Product/Product';
 const Products = () => {
   
   const [products]  = useState(productsData);
- 
 
   return (
    
-
     <section>
-
         {products.map(product => <Product key={product.id}
          name={product.name}
          title={product.title}
@@ -19,9 +16,6 @@ const Products = () => {
          sizes={product.sizes}
          basePrice={product.basePrice}/>)
          }
-
-        
-
     </section>
   );
 };
