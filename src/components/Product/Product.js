@@ -2,6 +2,7 @@ import styles from './Product.module.scss';
 import { useState } from 'react';
 import ProductImage from './ProductImage/ProductImage.js';
 import ProductForm from './ProductForm/ProductForm.js';
+import { useMemo } from 'react';
 
 const Product = ({name, title, basePrice, colors, sizes, }) => {
 
@@ -12,10 +13,11 @@ const Product = ({name, title, basePrice, colors, sizes, }) => {
     return styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()];
     }
   
-    const getPrice = () => {
+    const getPrice = useMemo(() => {
       const found = sizes.find(size => size.name === currentSize); 
       return(basePrice + found.additionalPrice)
-    }
+    }, [basePrice, sizes, currentSize])
+    
 
     const addToCart = event => {
       event.preventDefault()

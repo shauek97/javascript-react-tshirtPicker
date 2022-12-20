@@ -9,7 +9,7 @@ const ProductForm = props => {
    <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>{props.getPrice()}$</span>
+          <span className={styles.price}>{props.getPrice}$</span>
         </header>
         <form>
           <OptionSize propppedSizes={props.sizes} proppedSettingCurrentSize={props.setCurrentSize} proppedCurrentSize={props.currentSize} />
