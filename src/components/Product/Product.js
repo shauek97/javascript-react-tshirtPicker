@@ -25,7 +25,7 @@ const Product = ({name, title, basePrice, colors, sizes, }) => {
       console.log('SUMMARY')
       console.log('============')
       console.log('name:', title)
-      console.log('price:', getPrice())
+      console.log('price:', getPrice)
       console.log('color:', currentColor)
       console.log('size:', currentSize)
     }
